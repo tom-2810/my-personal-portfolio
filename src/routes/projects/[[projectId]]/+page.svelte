@@ -1,11 +1,13 @@
 <script>
     import { page } from '$app/stores'
 
-    let { projectId = 'default' } = $page.params
+    const allProjects = ['123','007','abc']
+    const defaultProjectId = 123
 
-    if(projectId == 'doesnotexist')
-    projectId = 'default'
+    let { projectId = defaultProjectId } = $page.params
+
+    if(!allProjects.includes(projectId)) projectId = defaultProjectId
 
 </script>
 
-<h1>this is project { projectId }</h1>
+<h1>this is project: { projectId }</h1>
