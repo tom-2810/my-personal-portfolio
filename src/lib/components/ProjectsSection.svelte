@@ -18,9 +18,9 @@
     </div>
 
     {#if currentAmountOfProjects < projects.length}
-    <button
+    <button class="second-btn"
     on:click={() => currentAmountOfProjects = currentAmountOfProjects + 2}>
-    Show more ✨
+    Show more...
   </button>
   {/if}
 </section>
