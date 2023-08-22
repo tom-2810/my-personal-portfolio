@@ -1,13 +1,26 @@
-<h1>Projects...</h1>
+<script>
+    import Project from '../components/Project.svelte'
 
-<ul>
-    <li>
-        <a href="/projects/123">Project 123</a>
-    </li>
-    <li>
-        <a href="/projects/007">Project 007</a>
-    </li>
-    <li>
-        <a href="/projects/abc">Project abc</a>
-    </li>
-</ul>
+    import projects from '$lib/projects.json'
+
+    let currentAmountOfProjects = 2;
+</script>
+
+<section>
+    <h1>Projects...</h1>
+
+    <div class="projects">
+        <!-- append all projects -->
+        {#each projects.slice(0, currentAmountOfProjects) as project}
+            <!-- pass down the current project -->
+            <Project { project } />
+        {/each}
+    </div>
+
+    {#if currentAmountOfProjects < projects.length}
+    <button
+    on:click={() => currentAmountOfProjects = currentAmountOfProjects + 2}>
+    Show more ✨
+  </button>
+  {/if}
+</section>

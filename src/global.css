@@ -1,3 +1,16 @@
-h1 {
-    color: #2d2d2d;
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --c-global-background: #fff7e4;
+    --c-global-text: #2d2d2d;
+}
+
+html {}
+
+body {
+    background-color: var(--c-global-background);
+    color: var(--c-global-text);
 }

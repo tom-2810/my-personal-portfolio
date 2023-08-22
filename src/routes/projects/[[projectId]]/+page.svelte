@@ -1,13 +1,16 @@
 <script>
     import { page } from '$app/stores'
+    import projects from '$lib/projects.json'
 
-    const allProjects = ['123','007','abc']
-    const defaultProjectId = 123
+    //id from url
+    let { projectId } = $page.params
+    //look for the object with projectId id
+    let project = projects.find(({ id }) => id === projectId);
 
-    let { projectId = defaultProjectId } = $page.params
-
-    if(!allProjects.includes(projectId)) projectId = defaultProjectId
-
+    //if there is no project with projectId, use the first project
+    if(project == undefined) {
+        project = projects[0]
+    }
 </script>
 
-<h1>this is project: { projectId }</h1>
+<h1>this is the case study for { project.title }</h1>
