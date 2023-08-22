@@ -44,7 +44,7 @@
         list-style: none;
         display: flex;
         flex-direction: row;
-        gap: var(--size-m);
+        gap: var(--size-l);
     }
 
     @media only screen and (max-width: 570px) {
@@ -52,6 +52,7 @@
             position: relative;
             left: 0;
             transform: none;
+            gap: var(--size-m);
         }
     }
 
