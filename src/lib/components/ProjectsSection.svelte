@@ -7,7 +7,7 @@
 </script>
 
 <section>
-    <h1>Projects...</h1>
+    <h2 id="projects"><a href="#projects">Projects</a></h2>
 
     <div class="projects">
         <!-- append all projects -->
@@ -20,7 +20,15 @@
     {#if currentAmountOfProjects < projects.length}
     <button class="second-btn"
     on:click={() => currentAmountOfProjects = currentAmountOfProjects + 3}>
-    Show more...
+    Show more
   </button>
   {/if}
 </section>
+
+<style>
+    .projects {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-xl);
+    }
+</style>

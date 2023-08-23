@@ -12,6 +12,10 @@
         project = projects[0]
     }
 
+    $: img = project.img_path;
+
+    $: if(!img) img = "placeholder.svg"
+
     //browsing between projects
     $: previousProject = projects[projects.indexOf(project) - 1]
     $: nextProject = projects[projects.indexOf(project) + 1]
@@ -19,12 +23,15 @@
 
 <h1>this is the case study for { project.title }</h1>
 
+<img src="/images/projects/{ img }" alt="{ project.title } cover picture">
+
+
 <!-- only show if there is a previous project in the projects array -->
 {#if projects.indexOf(project) > 0}
-<a href={'/projects/' + previousProject.id}>Previous project</a>
+<a href={'/projects/' + previousProject.id}>Previous project | </a>
 {/if}
 
 <!-- only show if the current project is not the last project in the projects array -->
 {#if projects.indexOf(project) < projects.length - 1}
-<a href={'/projects/' + nextProject.id}>| Next project</a>
+<a href={'/projects/' + nextProject.id}>Next project</a>
 {/if}
