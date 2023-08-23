@@ -3,7 +3,7 @@
 
     import projects from '$lib/projects.json'
 
-    let currentAmountOfProjects = 2;
+    let currentAmountOfProjects = 3;
 </script>
 
 <section>
@@ -19,7 +19,7 @@
 
     {#if currentAmountOfProjects < projects.length}
     <button class="second-btn"
-    on:click={() => currentAmountOfProjects = currentAmountOfProjects + 2}>
+    on:click={() => currentAmountOfProjects = currentAmountOfProjects + 3}>
     Show more...
   </button>
   {/if}

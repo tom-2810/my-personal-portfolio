@@ -21,10 +21,10 @@
 
 <!-- only show if there is a previous project in the projects array -->
 {#if projects.indexOf(project) > 0}
-<a href={'/projects/' + previousProject.id}>Previous</a>
+<a href={'/projects/' + previousProject.id}>Previous project</a>
 {/if}
 
 <!-- only show if the current project is not the last project in the projects array -->
 {#if projects.indexOf(project) < projects.length - 1}
-<a href={'/projects/' + nextProject.id}>| Next</a>
+<a href={'/projects/' + nextProject.id}>| Next project</a>
 {/if}

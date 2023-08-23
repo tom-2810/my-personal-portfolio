@@ -51,6 +51,7 @@ a {
 .action-btn:hover, .second-btn:hover {
     filter: contrast(1.05);
     scale: 1.008;
+    transition: .1s;
 }
 
 .action-btn:active, .second-btn:active {
