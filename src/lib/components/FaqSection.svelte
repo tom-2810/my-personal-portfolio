@@ -1,1 +1,3 @@
-<h1>Frequently asked questions...</h1>
+<section>
+    <h1>Frequently asked questions...</h1>
+</section>

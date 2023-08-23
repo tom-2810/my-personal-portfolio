@@ -6,8 +6,10 @@
     import FaqSection from "../lib/components/FaqSection.svelte";
 </script>
 
-<WelcomeSection />
-<ProjectsSection />
-<ReviewsSection />
-<ProjectRequestSection />
-<FaqSection />
+<div class="homepage">
+    <WelcomeSection />
+    <ProjectsSection />
+    <ReviewsSection />
+    <ProjectRequestSection />
+    <FaqSection />
+</div>

@@ -32,6 +32,10 @@ a {
     cursor: pointer;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 h2 {
     position: relative;
     left: var(--heading-spacer);
@@ -57,10 +61,16 @@ h2 a:hover::after {
     color: var(--c-second-text);
 }
 
+p {
+    font-size: 1.2rem;
+    color: var(--c-second-text);
+}
+
 .action-btn, .second-btn {
     all: unset;
     position: relative;
-    padding: var(--size-s) var(--size-l);
+    text-align: center;
+    padding: var(--size-s) var(--size-m);
     background-color: orange;
     color: white;
     font-weight: bold;

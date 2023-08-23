@@ -13,6 +13,6 @@
         <p> { project.summary }</p>
 
         <img src="/images/projects/{ img }" alt="{ project.title } cover picture">
-        <p>VIEW CASE STUDY -></p>
+        <p>Read the case study -></p>
     </a>
 </section>

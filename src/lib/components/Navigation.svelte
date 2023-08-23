@@ -15,11 +15,13 @@
 
 <style>
     header {
+        position: fixed;
         display: flex;
         flex-direction: row;
         justify-content: center;
         width: 100%;
         background-color: white;
+        z-index: 2;
     }
 
     nav {
