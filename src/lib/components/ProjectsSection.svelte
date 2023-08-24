@@ -6,8 +6,8 @@
     let currentAmountOfProjects = 3;
 </script>
 
-<section>
-    <h2 id="projects"><a href="#projects">Projects</a></h2>
+<section id="projects">
+    <h2><a href="#projects">Projects</a></h2>
 
     <div class="projects">
         <!-- append all projects -->

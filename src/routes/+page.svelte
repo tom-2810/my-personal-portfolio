@@ -13,3 +13,11 @@
     <ProjectRequestSection />
     <FaqSection />
 </div>
+
+<style>
+    .homepage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-xxl);
+}
+</style>

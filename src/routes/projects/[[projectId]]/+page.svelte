@@ -21,17 +21,78 @@
     $: nextProject = projects[projects.indexOf(project) + 1]
 </script>
 
-<h1>this is the case study for { project.title }</h1>
+<section>
+    
+    <div class="hero">
 
-<img src="/images/projects/{ img }" alt="{ project.title } cover picture">
+        <div class="project-intro">
+            <!-- only show if there is a previous project in the projects array -->
+            <div class="browser">
+                {#if projects.indexOf(project) > 0}
+    <p><a href={'/projects/' + previousProject.id}>Previous ←</a></p>
+    {/if}
+            </div>
+    
+    
+    <h1>{ project.title }</h1>
 
+    <!-- only show if the current project is not the last project in the projects array -->
+    <div class="browser">
+        {#if projects.indexOf(project) < projects.length - 1}
+    <p><a href={'/projects/' + nextProject.id}>→ Next</a></p>
+    {/if}
+    </div>
+    
+        </div>
+    
 
-<!-- only show if there is a previous project in the projects array -->
-{#if projects.indexOf(project) > 0}
-<a href={'/projects/' + previousProject.id}>Previous project | </a>
-{/if}
+    <img src="/images/projects/{ img }" alt="{ project.title } cover picture">
+    
+    </div>
+    
+    
+    
+</section>
 
-<!-- only show if the current project is not the last project in the projects array -->
-{#if projects.indexOf(project) < projects.length - 1}
-<a href={'/projects/' + nextProject.id}>Next project</a>
-{/if}
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .hero {
+        display: flex;
+        gap: var(--size-l);
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 59rem;
+        height: 100dvh;
+        padding-top: 8rem;
+        text-align: center;
+    }
+
+    .project-intro {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .project-intro .browser {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .hero img {
+        width: 90%;
+        max-height: 85%;
+        border-radius: var(--radius-l);
+        object-fit: cover;
+    }
+</style>

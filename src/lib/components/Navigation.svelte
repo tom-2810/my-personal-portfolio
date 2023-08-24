@@ -29,7 +29,7 @@
         flex-direction: row;
         align-items: center;
         width: 100%;
-        max-width: 68rem;
+        max-width: 59rem;
         margin: 0 2vw;
         padding: var(--size-m) 0;
         gap: var(--size-m);

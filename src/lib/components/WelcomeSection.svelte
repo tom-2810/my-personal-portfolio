@@ -32,25 +32,22 @@
         align-items: center;
         text-align: center;
         padding-top: 8rem;
-        height: 100dvh;
+        height: 95dvh;
         width: 100%;
         max-width: 55rem;
-        margin: 0 auto 10rem auto;
+        margin: 0 auto;
     }
 
     .welcome-buttons {
-        position: relative;
         display: flex;
         flex-direction: column;
         gap: .7rem;
         margin-top: auto;
         
-        bottom: 5rem;
-        width: max-content;
-        font-size: var(--size-l);
+        font-size: 2rem;
     }
 
     .welcome-buttons a {
-        width: 100%;
+        padding: var(--size-m) var(--size-xl);
     }
 </style>
