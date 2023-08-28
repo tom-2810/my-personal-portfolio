@@ -20,7 +20,8 @@
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        background-color: white;
+        background-color: var(--c-global-background);
+		border-bottom: 1px solid var(--c-second-text);
         z-index: 2;
     }
 
