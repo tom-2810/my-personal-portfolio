@@ -1,98 +1,77 @@
 <script>
-    import { page } from '$app/stores'
-    import projects from '$lib/projects.json'
+	import { page } from '$app/stores';
+	import { fly } from 'svelte/transition'
+	import projects from '$lib/projects.json';
 
-    //id from url
-    $: projectId = $page.params.projectId
-    //look for the object with projectId id
-    $: project = projects.find(({ id }) => id === projectId);
+	import ProjectBrowser from '$lib/components/projectBrowser.svelte';
 
-    //if there is no project with projectId, use the first project
-    $: if(project == undefined) {
-        project = projects[0]
-    }
+	//id from url
+	$: projectId = $page.params.projectId;
+	//look for the object with projectId id
+	$: project = projects.find(({ id }) => id === projectId);
 
-    $: img = project.img_path;
+	//if there is no project with projectId, use the first project
+	$: if (project == undefined) {
+		project = projects[0];
+	}
 
-    $: if(!img) img = "placeholder.svg"
+	$: img = project.img_path;
 
-    //browsing between projects
-    $: previousProject = projects[projects.indexOf(project) - 1]
-    $: nextProject = projects[projects.indexOf(project) + 1]
+	$: if (!img) img = 'placeholder.svg';
 </script>
 
-<section>
-    
-    <div class="hero">
+<section in:fly={{ y: 200, duration: 500, delay: 500 }} class="project-page">
+	<ProjectBrowser {projects} {project} />
+	<div class="hero">
+		<h1>{project.title}</h1>
+		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
+	</div>
 
-        <div class="project-intro">
-            <!-- only show if there is a previous project in the projects array -->
-            <div class="browser">
-                {#if projects.indexOf(project) > 0}
-    <p><a href={'/projects/' + previousProject.id}>Previous ←</a></p>
-    {/if}
-            </div>
-    
-    
-    <h1>{ project.title }</h1>
+	<article>
+		<section>
+			<h2>Lorem</h2>
+			<p>Dolor sit amet.</p>
+		</section>
+		<section>
+			<h2>Lorem</h2>
+			<p>Dolor sit amet.</p>
+		</section>
+		<section>
+			<h2>Lorem</h2>
+			<p>Dolor sit amet.</p>
+		</section>
 
-    <!-- only show if the current project is not the last project in the projects array -->
-    <div class="browser">
-        {#if projects.indexOf(project) < projects.length - 1}
-    <p><a href={'/projects/' + nextProject.id}>→ Next</a></p>
-    {/if}
-    </div>
-    
-        </div>
-    
-
-    <img src="/images/projects/{ img }" alt="{ project.title } cover picture">
-    
-    </div>
-    
-    
-    
+		<ProjectBrowser {projects} {project} />
+	</article>
 </section>
 
 <style>
-    section {
-        display: flex;
-        flex-direction: column;
+	.project-page {
+		display: flex;
+		flex-direction: column;
+		padding-top: 8rem;
+	}
 
-    }
+	.hero {
+		display: flex;
+		gap: var(--size-l);
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 59rem;
+		height: 100dvh;
+		text-align: center;
+	}
 
-    .hero {
-        display: flex;
-        gap: var(--size-l);
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 59rem;
-        height: 100dvh;
-        padding-top: 8rem;
-        text-align: center;
-    }
+	.hero h1 {
+		height: 2rem;
+	}
 
-    .project-intro {
-        display: flex;
-        align-items: center;
-        width: 70%;
-        justify-content: space-between;
-    }
-
-    .project-intro .browser {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 10rem;
-        height: 4rem;
-    }
-
-    .hero img {
-        width: 90%;
-        max-height: 85%;
-        border-radius: var(--radius-l);
-        object-fit: cover;
-    }
+	.hero img {
+		width: 90%;
+		max-height: 85%;
+		border-radius: var(--radius-l);
+		object-fit: cover;
+	}
 </style>
