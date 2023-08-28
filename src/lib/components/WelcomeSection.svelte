@@ -33,6 +33,7 @@
         text-align: center;
         padding-top: 8rem;
         height: 95dvh;
+        max-height: 55rem;
         width: 100%;
         max-width: 55rem;
         margin: 0 auto;

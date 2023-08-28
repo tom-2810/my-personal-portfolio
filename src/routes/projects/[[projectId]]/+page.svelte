@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { fly } from 'svelte/transition'
+	import { fly } from 'svelte/transition';
 	import projects from '$lib/projects.json';
 
 	import ProjectBrowser from '$lib/components/projectBrowser.svelte';
@@ -20,7 +20,7 @@
 	$: if (!img) img = 'placeholder.svg';
 </script>
 
-<section in:fly={{ y: 200, duration: 500, delay: 500 }} class="project-page">
+<section in:fly={{ y: 100, duration: 700, delay: 800 }} class="project-page">
 	<ProjectBrowser {projects} {project} />
 	<div class="hero">
 		<h1>{project.title}</h1>
@@ -45,6 +45,11 @@
 	</article>
 </section>
 
+<div class="action-btns">
+	<a href="#" class="action-btn">Visit live</a>
+	<a href="https://github.com/tom-2810/" class="second-btn">Open GitHub repo</a>
+</div>
+
 <style>
 	.project-page {
 		display: flex;
@@ -57,10 +62,9 @@
 		gap: var(--size-l);
 		flex-direction: column;
 		align-items: center;
-		margin: 0 auto;
+		margin: 0 auto var(--size-xxl) auto;
 		width: 100%;
 		max-width: 59rem;
-		height: 100dvh;
 		text-align: center;
 	}
 
@@ -70,8 +74,16 @@
 
 	.hero img {
 		width: 90%;
-		max-height: 85%;
+		max-width: 42rem;
 		border-radius: var(--radius-l);
 		object-fit: cover;
+	}
+	.action-btns {
+		position: fixed;
+		bottom: var(--size-m);
+		left: 50%;
+		transform: translateX(-50%);
+		width: max-content;
+		z-index: 1;
 	}
 </style>
