@@ -4,8 +4,6 @@
 	import ReviewsSection from '../lib/components/ReviewsSection.svelte';
 	import ProjectRequestSection from '../lib/components/ProjectRequestSection.svelte';
 	import FaqSection from '../lib/components/FaqSection.svelte';
-
-	
 </script>
 
 <div class="homepage">
@@ -14,10 +12,7 @@
 	<ReviewsSection />
 	<ProjectRequestSection />
 	<FaqSection />
-
-
 </div>
-
 
 <style>
 	.homepage {
@@ -25,6 +20,4 @@
 		flex-direction: column;
 		gap: var(--size-xxl);
 	}
-
-    
 </style>

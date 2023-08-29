@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { fly } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 	import projects from '$lib/projects.json';
 
 	import ProjectBrowser from '$lib/components/projectBrowser.svelte';
@@ -20,11 +20,11 @@
 	$: if (!img) img = 'placeholder.svg';
 </script>
 
-<section in:fly={{ y: 100, duration: 700, delay: 800 }} class="project-page">
+<section class="project-page">
 	<ProjectBrowser {projects} {project} />
-	<div class="hero">
-		<h1>{project.title}</h1>
-		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
+	<div class="hero" in:fly={{ y: 100, duration: 700, delay: 300 }}>
+		<h1 in:fly={{ y: 200, duration: 900, delay: 1000 }}>{project.title}</h1>
+		<img in:scale={{ duration: 400, delay: 250 }} src="/images/projects/{img}" alt="{project.title} cover picture" />
 	</div>
 
 	<article>
@@ -45,9 +45,9 @@
 	</article>
 </section>
 
-<div class="action-btns">
+<div in:fly={{ y: 200, duration: 900, delay: 1000 }} class="action-btns">
 	<a href="#" class="action-btn">Visit live</a>
-	<a href="https://github.com/tom-2810/" class="second-btn">Open GitHub repo</a>
+	<a target="_blank" href="https://github.com/tom-2810/" class="second-btn">Open GitHub repo</a>
 </div>
 
 <style>
@@ -69,7 +69,9 @@
 	}
 
 	.hero h1 {
+		position: relative;
 		height: 2rem;
+		z-index: -1;
 	}
 
 	.hero img {

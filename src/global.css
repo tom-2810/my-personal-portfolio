@@ -49,7 +49,6 @@ h2 {
     left: var(--heading-spacer);
     width: max-content;
     text-shadow: 2px 0px var(--c-global-background);
-    z-index: 1;
 }
 
 h2::before {

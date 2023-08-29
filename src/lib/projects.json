@@ -1,12 +1,12 @@
 [
     {"id": "123", "title": "Monwest", "summary": "Summary text Monwest", "img_path": "monwest-hero.jpg"},
     {"id": "124", "title": "Museum", "summary": "Summary text Museum", "img_path": "museum-hero.jpg"},
-    {"id": "125", "title": "Test", "summary": "Summary text Test", "img_path": ""},
+    {"id": "125", "title": "Test", "summary": "Summary text Test", "img_path": "monwest-hero.jpg"},
     {"id": "126", "title": "Test1", "summary": "Summary text Test1", "img_path": ""},
     {"id": "127", "title": "Test2", "summary": "Summary text Test2", "img_path": ""},
-    {"id": "128", "title": "Test3", "summary": "Summary text Test3", "img_path": ""},
+    {"id": "128", "title": "Test3", "summary": "Summary text Test3", "img_path": "monwest-hero.jpg"},
     {"id": "129", "title": "Test4", "summary": "Summary text Test4", "img_path": ""},
-    {"id": "130", "title": "Test5", "summary": "Summary text Test5", "img_path": ""},
-    {"id": "131", "title": "Test6", "summary": "Summary text Test6", "img_path": ""},
-    {"id": "132", "title": "Crazzzy project 🚀", "summary": "Summary text CRAZY", "img_path": ""}
+    {"id": "130", "title": "Test5", "summary": "Summary text Test5", "img_path": "museum-hero.jpg"},
+    {"id": "131", "title": "Test6", "summary": "Summary text Test6", "img_path": "monwest-hero.jpg"},
+    {"id": "132", "title": "Crazzzy project 🚀", "summary": "Summary text CRAZY", "img_path": "monwest-hero.jpg"}
 ]

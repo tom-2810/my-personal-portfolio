@@ -3,10 +3,12 @@
 
 	import projects from '$lib/projects.json';
 
-	let currentAmountOfProjects = 4;
+	let currentAmountOfProjects = 3;
+
 </script>
 
 <section id="projects">
+
 	<h2><a href="#projects">Projects</a></h2>
 
 	<div class="projects">
@@ -21,7 +23,7 @@
 		{#if currentAmountOfProjects < projects.length}
 			<button
 				class="second-btn"
-				on:click={() => (currentAmountOfProjects = currentAmountOfProjects + 6)}
+				on:click={() => (currentAmountOfProjects = currentAmountOfProjects + 3)}
 			>
 				Show more
 			</button>
@@ -32,17 +34,26 @@
 <style>
 	.projects {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-		gap: var(--size-l);
+		grid-template-columns: repeat(9, 1fr);
+		column-gap: var(--size-xl);
+		row-gap: var(--size-xxl);
 
-		margin: 0 auto;
+		margin: 0 auto 7rem auto;
 		width: 100%;
-		max-width: 59rem;
-		padding: 0 2vw;
+		max-width: 53rem;
+		padding: 0 5vw;
 	}
 
 	.more {
-        display: flex;
-        justify-content: space-around;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	@media (max-width: 580px) {
+		.projects {
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-xl);
+		}
 	}
 </style>

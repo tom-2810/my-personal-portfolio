@@ -4,24 +4,12 @@
 	let img = project.img_path;
 
 	if (!img) img = 'placeholder.svg';
-
-	let m = { x: 0, y: 0 };
-
-	function handleMousemove(event) {
-		m.x = event.clientX;
-		m.y = event.clientY;
-
-		console.log(m.x, m.y);
-	}
 </script>
 
-<section aria-hidden="true" on:mousemove={handleMousemove} class="project">
+<section class="project">
 	<a href={'/projects/' + project.id}>
 		<h3>{project.title}</h3>
 		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
-		<div class="cursor" style="transform: translateX({m.x - 24}px) translateY({m.y - 28}px)">
-			🔍
-		</div>
 
 		<p class="summary">{project.summary}</p>
 
@@ -54,8 +42,37 @@
 		overflow: visible;
 	}
 
+	.project {
+		position: relative;
+		transition: .7s;
+	}
+
+	.project:nth-child(1n) {
+		grid-column: span 5;
+	}
+	
+	.project:nth-child(2n) {
+		grid-column: span 4;
+		transform: translateY(13rem);
+	}
+
+	.project:nth-child(3n) {
+		grid-column: span 7;
+		transform: translateX(6rem) translateY(1rem);
+	}
+
+	.project:nth-child(4n) {
+		grid-column: span 4;
+		transform: translateY(8rem);
+	}
+
+	.project:nth-child(5n) {
+		grid-column: span 5;
+		transform: translateY(-4rem);
+	}
+
 	.project:hover svg {
-		width: 100px;
+		width: 2.2rem;
 	}
 
 	.project * {
@@ -68,8 +85,12 @@
 		color: #ff9900;
 	}
 
+	.project:hover {
+		scale: 1.02;
+	}
+
 	.project:hover :is(img, .summary) {
-		border-radius: var(--radius-m);
+		border-radius: var(--radius-s);
 		color: var(--c-global-text);
 	}
 
@@ -79,27 +100,11 @@
 		object-fit: cover;
 
 		border-radius: var(--radius-l);
-		border: 1px solid var(--c-second-text);
 	}
 
-	.cursor {
-		display: none;
-		align-items: center;
-		justify-content: center;
-		position: fixed;
-		top: 0;
-		left: 0;
-		font-size: 4rem;
-		pointer-events: none;
-		transition: 0s;
-		z-index: 1;
-	}
-
-	.project :hover {
-		cursor: none;
-	}
-
-	.project:hover .cursor {
-		display: flex;
+	@media (max-width: 580px) {
+		.project {
+			transform: translateX(0) translateY(0) !important;
+		}
 	}
 </style>
