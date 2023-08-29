@@ -9,9 +9,8 @@
 <section class="project">
 	<a href={'/projects/' + project.id}>
 		<h3>{project.title}</h3>
-		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
-
 		<p class="summary">{project.summary}</p>
+		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
 
 		<p class="case-study">
 			Read the case study
@@ -86,11 +85,11 @@
 	}
 
 	.project:hover {
-		scale: 1.02;
+		scale: 1.07;
 	}
 
 	.project:hover :is(img, .summary) {
-		border-radius: var(--radius-s);
+		border-radius: var(--radius-m);
 		color: var(--c-global-text);
 	}
 
@@ -99,7 +98,7 @@
 		aspect-ratio: 2/1.5;
 		object-fit: cover;
 
-		border-radius: var(--radius-l);
+		border-radius: var(--radius-xl);
 	}
 
 	@media (max-width: 580px) {

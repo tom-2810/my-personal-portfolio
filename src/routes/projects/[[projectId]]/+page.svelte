@@ -84,6 +84,8 @@
 		position: fixed;
 		bottom: var(--size-m);
 		left: 50%;
+		display: flex;
+		gap: var(--size-s);
 		transform: translateX(-50%);
 		width: max-content;
 		z-index: 1;
