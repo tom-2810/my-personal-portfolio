@@ -25,7 +25,13 @@
 				class="second-btn"
 				on:click={() => (currentAmountOfProjects = currentAmountOfProjects + 3)}
 			>
-				Show more
+				Show 
+				{ #if projects.length - currentAmountOfProjects > 3 }
+				{ 3 }
+				{ :else }
+				{ projects.length - currentAmountOfProjects }
+				{ /if }
+				more 
 			</button>
 		{/if}
 	</div>
@@ -38,7 +44,7 @@
 		column-gap: var(--size-xl);
 		row-gap: var(--size-xxl);
 
-		margin: 0 auto 7rem auto;
+		margin: 0 auto 4rem auto;
 		width: 100%;
 		max-width: 53rem;
 		padding: 0 5vw;

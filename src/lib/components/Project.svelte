@@ -13,7 +13,7 @@
 		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
 
 		<p class="case-study">
-			Read the case study
+			Read case study
 			<svg>
 				<defs>
 					<marker id="m" markerWidth="4" markerHeight="5" refX="0" refY="1" viewBox="0 0 1 2">
@@ -71,7 +71,7 @@
 	}
 
 	.project:hover svg {
-		width: 2.2rem;
+		width: 3rem;
 	}
 
 	.project * {
@@ -81,15 +81,17 @@
 	.project .case-study {
 		display: flex;
 		gap: var(--size-s);
+		font-size: 1.1rem;
+		font-weight: lighter;
 		color: #ff9900;
 	}
 
 	.project:hover {
-		scale: 1.07;
+		scale: 1.08;
 	}
 
 	.project:hover :is(img, .summary) {
-		border-radius: var(--radius-m);
+		border-radius: var(--radius-s);
 		color: var(--c-global-text);
 	}
 
