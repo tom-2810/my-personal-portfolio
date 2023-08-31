@@ -2,9 +2,9 @@
 	<div>
 		<h2>Got a project?</h2>
 		<a class="action-btn" href="#contact">Reach out!</a>
-		<img class="🥳" src="/images/svg/party-face.svg" alt="">
-		<img class="🎊" src="/images/svg/confetti.svg" alt="">
-        <img class="😁" src="/images/svg/grinning-face.svg" alt="">
+		<img class="🥳" src="/images/animated/partying-face.png" alt="">
+		<img class="🎊" src="/images/animated/party-popper.png" alt="">
+        <img class="😁" src="/images/animated/grinning-face.png" alt="">
 	</div>
 </section>
 
