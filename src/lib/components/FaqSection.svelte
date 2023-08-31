@@ -41,7 +41,7 @@
         display: none;
     }
 	.highlight {
-		color: orange;
+		color: var(--c-contrast);
 	}
 	div {
 		display: flex;
@@ -55,9 +55,11 @@
 		font-size: 1rem;
 		width: 100%;
 		border-bottom: 1px solid var(--c-global-text);
+		opacity: .8;
 		filter: contrast(0);
 	}
 	details[open] {
+		opacity: 1;
 		filter: contrast(1);
 	}
 
@@ -68,6 +70,7 @@
 		padding: 0.4rem 1rem;
 		font-size: 1.3rem;
 		transition: 0.3s;
+		font-family: 'Fugaz One', cursive;
 
 		cursor: pointer;
 	}

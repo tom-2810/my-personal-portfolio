@@ -9,7 +9,7 @@
 <section class="project">
 	<a href={'/projects/' + project.id}>
 		<h3>{project.title}</h3>
-		<p class="summary">{project.summary}</p>
+		<!-- <p class="summary">{project.summary}</p> -->
 		<img src="/images/projects/{img}" alt="{project.title} cover picture" />
 
 		<p class="case-study">
@@ -99,6 +99,7 @@
 		width: 100%;
 		aspect-ratio: 2/1.5;
 		object-fit: cover;
+		/* margin: .2rem 0; */
 
 		border-radius: var(--radius-xl);
 	}

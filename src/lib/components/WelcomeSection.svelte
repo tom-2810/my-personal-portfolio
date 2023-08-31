@@ -50,5 +50,6 @@
 
     .welcome-buttons a {
         padding: var(--size-m) var(--size-xl);
+        height: 2.1rem;
     }
 </style>

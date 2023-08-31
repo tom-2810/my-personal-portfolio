@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +12,13 @@
 :root {
     --c-global-background: #fff9ec;
     --c-global-text: #2d2d2d;
-    --c-second-text: #6e6e6e;
+    --c-second-text: #575757;
+
+    --c-contrast: rgb(255, 157, 0);
 
     --size-xs: .15rem;
     --size-s: .4rem;
-    --size-m: 1rem;
+    --size-m: 1.1rem;
     --size-l: 1.5rem;
     --size-xl: 4rem;
     --size-xxl: 11rem;
@@ -42,6 +46,7 @@ a {
 }
 
 h1 {
+    font-family: 'Fugaz One', cursive;
     font-size: 2.3rem;
 }
 
@@ -52,6 +57,8 @@ h2 {
     font-size: 1.8rem;
     text-shadow: 2px 0px var(--c-global-background);
     margin-bottom: 2.5rem;
+
+    font-family: 'Fugaz One', cursive;
 }
 
 h2::before {
@@ -72,6 +79,7 @@ h2 a:hover::after {
 }
 
 h3 {
+    font-family: 'Fugaz One', cursive;
     font-size: 1.4rem;
 }
 
@@ -82,10 +90,13 @@ p {
 
 .action-btn, .second-btn {
     all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     text-align: center;
     padding: var(--size-s) var(--size-m);
-    background-color: orange;
+    background-color: var(--c-contrast);
     color: white;
     font-weight: bold;
     border: 1px solid var(--c-global-text);
@@ -95,11 +106,15 @@ p {
     box-shadow: var(--size-xs) var(--size-xs) var(--c-global-text);
 }
 
+.action-btn {
+    font-family: 'Fugaz One', cursive;
+}
+
 .second-btn {
     background-color: white;
-    color: orange;
+    color: var(--c-contrast);
 
-    --c-global-text: orange;
+    --c-global-text: var(--c-contrast);
 }
 
 .action-btn:hover, .second-btn:hover {

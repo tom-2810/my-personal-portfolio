@@ -53,6 +53,8 @@
 	.more {
 		display: flex;
 		justify-content: space-around;
+
+		font-family: 'Fugaz One', cursive;
 	}
 
 	@media (max-width: 580px) {
