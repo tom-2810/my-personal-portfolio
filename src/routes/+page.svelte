@@ -19,5 +19,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-xxl);
+
+		overflow: hidden;
 	}
 </style>
